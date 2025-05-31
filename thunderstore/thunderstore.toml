@@ -2,10 +2,10 @@
 schemaVersion = "0.0.1"
 
 [package]
-namespace = "yournamespace"
-name = "YourModName"
+namespace = "ToggleCameraEffect"
+name = "ToggleCameraEffect"
 versionNumber = "0.1.0"
-description = "your mod description"
+description = "Toggle Hurt LowHP EarthQuake Camera Effect"
 websiteUrl = "link to the git repo"
 containsNsfwContent = false
 
