@@ -13,9 +13,6 @@ namespace ToggleCameraEffect;
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class ToggleCameraEffect : BaseUnityPlugin {
     private ConfigEntry<bool> disableCameraEffect = null!;
-#if DEBUG
-    private ConfigEntry<KeyboardShortcut> somethingKeyboardShortcut = null!;
-#endif
 
     private Harmony harmony = null!;
 
@@ -26,12 +23,6 @@ public class ToggleCameraEffect : BaseUnityPlugin {
         harmony = Harmony.CreateAndPatchAll(typeof(ToggleCameraEffect).Assembly);
 
         disableCameraEffect = Config.Bind("", "Disable Camera Effect", false, "");
-#if DEBUG
-        somethingKeyboardShortcut = Config.Bind("General.Something", "Shortcut",
-            new KeyboardShortcut(KeyCode.H, KeyCode.LeftControl), "Shortcut to execute");
-#endif
-
-        KeybindManager.Add(this, TestMethod, () => somethingKeyboardShortcut.Value);
 
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
 
@@ -78,13 +69,6 @@ public class ToggleCameraEffect : BaseUnityPlugin {
         }
     }
 
-#if DEBUG
-    private void TestMethod() {
-        ToastManager.Toast("Shortcut activated");
-        
-    }
-#endif
-
     async UniTask checkMove() {
         // 每 1000 毫秒檢查一次 Player 是否存在且已開始移動
         while (Player.i == null || Player.i.moveVec.x == 0f) {
@@ -128,9 +112,6 @@ public class ToggleCameraEffect : BaseUnityPlugin {
                 computer.enabled = false;
         }
     }
-
-
-
 
     private void OnDestroy() {
         SceneManager.sceneLoaded -= OnSceneLoaded;
