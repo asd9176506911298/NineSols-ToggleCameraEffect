@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AssemblyName>ToggleCameraEffect</AssemblyName>
         <Description>Toggle Camera Effect</Description>
@@ -35,6 +35,9 @@
         </Reference>
         <Reference Include="InControl">
             <HintPath>$(DllPath)/InControl.dll</HintPath>
+        </Reference>
+        <Reference Include="UniTask">
+            <HintPath>$(DllPath)/UniTask.dll</HintPath>
         </Reference>
     </ItemGroup>
 
