@@ -6,7 +6,7 @@ namespace = "ToggleCameraEffect"
 name = "ToggleCameraEffect"
 versionNumber = "0.1.0"
 description = "Toggle Hurt LowHP EarthQuake Camera Effect"
-websiteUrl = "link to the git repo"
+websiteUrl = "https://github.com/asd9176506911298/NineSols-ToggleCameraEffect"
 containsNsfwContent = false
 
 [package.dependencies]
